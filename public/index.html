@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Lakers Pride Security | Elite Protection · Integrity & Loyalty</title>
+  <meta name="description" content="Lakers Pride Security provides integrated, modern security solutions in Kenya: manned guarding, CCTV, alarms, VIP protection, K9 units, and 24/7 response.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FFFFFF;
+      color: #0d4af1;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --lp-navy: #0A1C3A;
+      --lp-navy-deep: #04132C;
+      --lp-gold: #D4AF37;
+      --lp-gold-dark: #B8901E;
+      --lp-red: #c25957;
+      --lp-slate: #1351eb;
+      --lp-light-bg: #F8FAFE;
+      --lp-gray: #5A6885;
+      --lp-border: #E6EAF2;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background: var(--lp-navy-deep);
+      padding: 10px 0;
+      font-size: 13px;
+      color: #BCC6E0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .top-contact {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .top-contact a {
+      color: #DCE3F5;
+      text-decoration: none;
+      transition: 0.2s;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .top-contact a i {
+      margin-right: 6px;
+      color: var(--lp-gold);
+    }
+
+    .top-contact a:hover { color: var(--lp-gold); }
+
+    .emergency-badge {
+      background: rgba(212, 175, 55, 0.12);
+      padding: 5px 12px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--lp-gold);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .social-icons a {
+      color: #BCC6E0;
+      margin-left: 14px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+    .social-icons a:hover { color: var(--lp-gold); }
+
+    /* Navbar */
+    .navbar {
+      background: var(--lp-navy);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 0;
+      transition: 0.3s;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    }
+    .navbar.scrolled {
+      background: rgba(10, 28, 58, 0.96);
+      backdrop-filter: blur(12px);
+    }
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      padding: 14px 0;
+    }
+    .logo-img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .logo-text h1 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: white;
+      line-height: 1.2;
+    }
+    .logo-text span {
+      font-size: 10px;
+      letter-spacing: 1.2px;
+      color: var(--lp-gold);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      padding: 8px 16px;
+      border-radius: 40px;
+      transition: 0.2s;
+      letter-spacing: 0.3px;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      background: rgba(212, 175, 55, 0.12);
+      color: var(--lp-gold);
+    }
+    .quote-btn {
+      background: var(--lp-gold);
+      color: var(--lp-navy) !important;
+      padding: 8px 20px !important;
+      border-radius: 40px !important;
+      font-weight: 800 !important;
+      margin-left: 10px;
+    }
+    .quote-btn:hover { background: #E6C34E; color: #04132C !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger div { width: 28px; height: 2px; background: white; border-radius: 2px; transition: 0.2s; }
+
+    /* Hero Section with Background Image */
+    .hero {
+       background: linear-gradient(105deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      padding: 100px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: inherit;
+      z-index: 0;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .hero-content {
+      flex: 1;
+      min-width: 280px;
+    }
+    .hero-badge {
+      background: rgba(212,175,55,0.12);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 6px 20px;
+      border-radius: 40px;
+      border: 1px solid rgba(212,175,55,0.3);
+      margin-bottom: 24px;
+    }
+    .hero-badge span { color: var(--lp-gold); font-size: 12px; font-weight: 700; letter-spacing: 2px; }
+    .hero h1 {
+      font-size: 68px;
+      font-weight: 800;
+      line-height: 1.1;
+      color: white;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .hero h1 .gold-text { color: var(--lp-gold); }
+    .hero p {
+      font-size: 17px;
+      color: #CBD5E6;
+      max-width: 520px;
+      margin-bottom: 36px;
+      line-height: 1.5;
+    }
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--lp-gold);
+      color: var(--lp-navy);
+      padding: 14px 32px;
+      font-weight: 800;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-primary:hover { background: #E6C34E; transform: translateY(-2px); }
+    .btn-outline-light {
+      border: 2px solid rgba(255,255,255,0.3);
+      background: transparent;
+      padding: 12px 28px;
+      border-radius: 40px;
+      color: white;
+      font-weight: 600;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .btn-outline-light:hover { border-color: var(--lp-gold); background: rgba(212,175,55,0.1); }
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 56px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 36px;
+    }
+    .stat-item h3 { font-size: 36px; font-weight: 800; color: var(--lp-gold); margin-bottom: 6px; }
+    .stat-item p { font-size: 13px; color: #9DABCA; letter-spacing: 1px; font-weight: 500; }
+
+    /* Stats Bar */
+    .stats-bar {
+      background: white;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--lp-border);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+    .stat-card h2 { font-size: 48px; font-weight: 800; color: var(--lp-navy); }
+    .stat-card h2 i { color: var(--lp-gold); font-size: 40px; margin-right: 6px; }
+    .stat-card p { color: var(--lp-gray); font-weight: 600; letter-spacing: 1px; margin-top: 8px; }
+
+    /* Services Section */
+    .services-section {
+      padding: 90px 0;
+      background: var(--lp-light-bg);
+    }
+    .section-title {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--lp-navy);
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      color: var(--lp-gray);
+      font-size: 17px;
+      max-width: 620px;
+      margin-bottom: 48px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    .service-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.03);
+      transition: 0.25s;
+      border: 1px solid var(--lp-border);
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--lp-gold);
+      box-shadow: 0 22px 40px rgba(10,28,58,0.08);
+    }
+    .service-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 12px; color: var(--lp-navy); }
+    .service-card p { color: var(--lp-gray); line-height: 1.5; font-size: 15px; margin-bottom: 20px; }
+    .service-link {
+      font-weight: 700;
+      color: var(--lp-gold-dark);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Why Section */
+    .why-section {
+      padding: 90px 0;
+    }
+    .why-flex {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .why-left { flex: 1; }
+    .why-left img { 
+      width: 100%; 
+      border-radius: 28px; 
+      background: var(--lp-navy); 
+      box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2);
+      object-fit: cover;
+      min-height: 400px;
+    }
+    .why-right { flex: 1; }
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 28px;
+    }
+    .feature-item i { font-size: 28px; color: var(--lp-gold); margin-bottom: 12px; }
+    .feature-item h4 { font-weight: 800; font-size: 18px; margin-bottom: 6px; }
+
+    /* Testimonials Section */
+    .testimonials-section {
+      padding: 90px 0;
+      background: var(--lp-light-bg);
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 48px;
+    }
+    .testimonial-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+      transition: 0.25s;
+      border: 1px solid var(--lp-border);
+      position: relative;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+    }
+    .testimonial-stars {
+      color: var(--lp-gold);
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    .testimonial-text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--lp-gray);
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      border-top: 1px solid var(--lp-border);
+      padding-top: 20px;
+    }
+    .testimonial-author h4 {
+      font-weight: 800;
+      color: var(--lp-navy);
+      margin-bottom: 4px;
+    }
+    .testimonial-author p {
+      font-size: 13px;
+      color: var(--lp-gold-dark);
+      font-weight: 600;
+    }
+    .quote-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 60px;
+      color: rgba(212, 175, 55, 0.1);
+      font-family: serif;
+    }
+
+    /* Emergency CTA */
+    .emergency-cta {
+      background: linear-gradient(95deg, #A12323 0%, #C42E2B 100%);
+      padding: 70px 0;
+      text-align: center;
+    }
+    .emergency-cta h2 { font-size: 48px; font-weight: 800; color: white; letter-spacing: -0.3px; }
+    .emergency-cta p { color: rgba(255,255,255,0.9); font-size: 18px; margin: 18px 0 28px; }
+    .btn-white {
+      background: white;
+      color: #C42E2B;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-weight: 800;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-outline-white {
+      border: 2px solid white;
+      background: transparent;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-left: 14px;
+    }
+
+    /* Footer */
+    footer {
+      background: #07122A;
+      color: #B9C4E0;
+      padding: 60px 0 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-logo .logo-img { width: 45px; height: 45px; margin-bottom: 16px; }
+    .footer-links a { display: block; color: #B9C4E0; text-decoration: none; margin-bottom: 12px; transition: 0.2s; }
+    .footer-links a:hover { color: var(--lp-gold); padding-left: 5px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    /* Modal & Overlay */
+    .page-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.2s;
+      overflow-y: auto;
+    }
+    .page-overlay.open {
+      visibility: visible;
+      opacity: 1;
+    }
+    .modal-card {
+      background: white;
+      max-width: 1000px;
+      width: 90%;
+      border-radius: 32px;
+      overflow: hidden;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal-header {
+      background: var(--lp-navy);
+      padding: 30px 32px;
+      color: white;
+      position: relative;
+    }
+    .modal-header h2 { font-size: 32px; font-weight: 800; }
+    .modal-close {
+      position: absolute;
+      top: 24px; right: 28px;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      border-radius: 40px;
+      width: 38px;
+      height: 38px;
+      color: white;
+    }
+    .modal-body { padding: 36px 40px; }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .hero h1 { font-size: 50px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .top-contact { gap: 12px; flex-wrap: wrap; }
+      .hero-stats { gap: 24px; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .why-flex { flex-direction: column; }
+      .feature-list { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-buttons .btn-outline-light { margin-top: 10px; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: var(--lp-navy-deep);
+      z-index: 1100;
+      transform: translateX(100%);
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+      padding: 90px 32px;
+      gap: 24px;
+    }
+    .mobile-nav.open { transform: translateX(0); }
+    .mobile-nav a {
+      color: white;
+      font-size: 24px;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 12px 0;
+    }
+    .wa-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #25D366;
+      width: 56px;
+      height: 56px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1400;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+    .wa-float i { font-size: 32px; color: white; }
+    .toast {
+      position: fixed;
+      bottom: 100px;
+      right: 24px;
+      background: #0A1C3A;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 40px;
+      font-weight: 500;
+      z-index: 2001;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      border-left: 5px solid var(--lp-gold);
+      animation: fadeInUp 0.3s ease;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="top-contact">
+      <span class="emergency-badge"><i class="fas fa-shield-alt"></i> 24/7 Emergency Response</span>
+      <a href="tel:+254 790 792629"><i class="fas fa-phone-alt"></i> +254 790 792629</a>
+      <a href="tel:+254712345678"><i class="fas fa-phone-alt"></i> +254 727 085 461</a>
+      <a href="mailto:info@lpsecurity.co.ke"><i class="far fa-envelope"></i> info@lpsecurity.co.ke</a>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#" class="logo" onclick="showHome(); return false;">
+      <img src="/api/placeholder/48/48" alt="Lakers Pride Security Logo" class="logo-img" id="siteLogo">
+      <div class="logo-text">
+        <h1>Lakers Pride SECURITY</h1>
+        <span>Integrity & Loyalty</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showHome(); return false;" class="active">HOME</a></li>
+      <li><a href="/about.html">ABOUT</a></li>
+      <li><a href="/services.html">SERVICES</a></li>
+      <li><a href="#" onclick="openModal('contact'); return false;">CONTACT</a></li>
+      <li><a href="#" onclick="openModal('quote'); return false;" class="quote-btn">REQUEST QUOTE</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <div></div><div></div><div></div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileMenu">
+  <a href="#" onclick="showHome();toggleMobileMenu();">HOME</a>
+  <a href="#" onclick="openModal('about');toggleMobileMenu();">ABOUT</a>
+  <a href="#" onclick="openModal('services');toggleMobileMenu();">SERVICES</a>
+  <a href="#" onclick="openModal('contact');toggleMobileMenu();">CONTACT</a>
+  <a href="#" onclick="openModal('quote');toggleMobileMenu();">REQUEST A QUOTE</a>
+</div>
+
+<main>
+  <section class="hero" id="heroSection">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge"><span><i class="fas fa-bolt"></i> KENYA'S TRUSTED SECURITY PARTNER</span></div>
+          <h1>SECURITY <span class="gold-text">SERVICE</span><br>WITH INTEGRITY</h1>
+          <p>We provide integrated, reliable and professional security services tailored to your needs. Your safety is our commitment.</p>
+          <div class="hero-buttons">
+            <a href="/services.html" class="btn-primary"><i class="fas fa-shield-haltered"></i> OUR SERVICES</a>
+            <a href="#" class="btn-outline-light" onclick="openModal('contact'); return false;"><i class="fas fa-headset"></i> 24/7 SUPPORT</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item"><h3>10+</h3><p>YEARS EXPERIENCE</p></div>
+            <div class="stat-item"><h3>100+</h3><p>CLIENTS SERVED</p></div>
+            <div class="stat-item"><h3>20+</h3><p>COUNTIES COVERAGE</p></div>
+          </div>
+        </div>
+        <div class="hero-image" style="flex:0.8; min-width:260px;">
+          <div style="background: rgba(212,175,55,0.1); border-radius: 30px; padding: 20px; text-align: center;">
+            <i class="fas fa-shield-virus" style="font-size: 130px; color: var(--lp-gold);"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card"><h2><i class="fas fa-user-shield"></i> 1000+</h2><p>Trained Officers</p></div>
+        <div class="stat-card"><h2><i class="fas fa-video"></i> 24/7</h2><p>Monitoring Center</p></div>
+        <div class="stat-card"><h2><i class="fas fa-tachometer-alt"></i> 5 MIN</h2><p>Rapid Response</p></div>
+        <div class="stat-card"><h2><i class="fas fa-check-circle"></i> 100%</h2><p>Client Satisfaction</p></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="services-section">
+    <div class="container">
+      <div class="section-title">Our Security <span style="color:var(--lp-gold)">Services</span></div>
+      <div class="section-sub">We offer a wide range of security solutions designed to protect what matters most to you.</div>
+      <div class="services-grid">
+        <div class="service-card"><h3>Manned Guarding</h3><p>Professional and well-trained security guards to protect your people and property with integrity.</p><a href="#" class="service-link" onclick="openModal('services'); return false;">View Details <i class="fas fa-arrow-right"></i></a></div>
+        <div class="service-card"><h3>CCTV Installation & Monitoring</h3><p>Advanced CCTV systems with 24/7 monitoring for maximum security and real-time alerts.</p><a href="#" class="service-link" onclick="openModal('services'); return false;">View Details <i class="fas fa-arrow-right"></i></a></div>
+        <div class="service-card"><h3>Alarm Installation & Monitoring</h3><p>Smart alarm systems with instant alerts and response integration for ultimate protection.</p><a href="#" class="service-link" onclick="openModal('services'); return false;">View Details <i class="fas fa-arrow-right"></i></a></div>
+        <div class="service-card"><h3>VIP Protection</h3><p>Close protection services for individuals, executives, and dignitaries — discreet and elite.</p><a href="#" class="service-link" onclick="openModal('services'); return false;">View Details <i class="fas fa-arrow-right"></i></a></div>
+        <div class="service-card"><h3>K9 Security Services</h3><p>Trained security dogs for detection, patrol, and risk mitigation on sensitive sites.</p><a href="#" class="service-link" onclick="openModal('services'); return false;">View Details <i class="fas fa-arrow-right"></i></a></div>
+        <div class="service-card"><h3>Security Consultancy</h3><p>Risk assessment, security audits & modern security planning for enterprises.</p><a href="#" class="service-link" onclick="openModal('services'); return false;">View Details <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="container">
+      <div class="why-flex">
+        <div class="why-left">
+          <img id="aboutImage" src="/api/placeholder/600/500" alt="LP Security Team">
+        </div>
+        <div class="why-right">
+          <div class="section-title">SERVICE WITH <span style="color:var(--lp-gold)">SECURITY · INTEGRITY · LOYALTY</span></div>
+          <p class="section-sub" style="margin-bottom:20px">Your safety is our priority. Lakers Pride Security is built on a foundation of unwavering ethics, modern technology, and dedicated professionals.</p>
+          <div class="feature-list">
+            <div class="feature-item"><i class="fas fa-medal"></i><h4>Certified Professionals</h4><p>PSRA licensed & continuously trained</p></div>
+            <div class="feature-item"><i class="fas fa-clock"></i><h4>24/7 Rapid Deployment</h4><p>Round-the-clock operation readiness</p></div>
+            <div class="feature-item"><i class="fas fa-microchip"></i><h4>Smart Technology</h4><p>AI analytics & remote monitoring</p></div>
+            <div class="feature-item"><i class="fas fa-handshake"></i><h4>Integrity First</h4><p>Transparent contracts, zero compromise</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section - Before Footer -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-title">What Our <span style="color:var(--lp-gold)">Clients Say</span></div>
+      <div class="section-sub">Trusted by Kenya's leading hotels and businesses</div>
+      <div class="testimonials-grid" id="testimonialsGrid">
+        <!-- Testimonials will be loaded dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <section class="emergency-cta">
+    <div class="container">
+      <h2>Need Immediate Security Assistance?</h2>
+      <p>Our rapid response team is on standby 24/7. Don't wait — contact us now.</p>
+      <a href="tel:+254790792629" class="btn-white"><i class="fas fa-phone-alt"></i> CALL NOW: +254 790 792629</a>
+      <a href="#" class="btn-outline-white" onclick="openModal('contact'); return false;">SEND MESSAGE</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-logo">
+          <img src="/api/placeholder/45/45" alt="Lakers Pride Security Logo" class="logo-img" id="footerLogo">
+          <p style="margin-top: 16px;">Integrated modern security solutions for businesses, institutions, and private clients across Kenya.</p>
+        </div>
+        <div>
+          <h4 style="color:white; margin-bottom: 20px;">Services</h4>
+          <div class="footer-links">
+            <a href="#">Manned Guarding</a>
+            <a href="#">CCTV & Monitoring</a>
+            <a href="#">Alarm Systems</a>
+            <a href="#">K9 Security</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="color:white; margin-bottom: 20px;">Company</h4>
+          <div class="footer-links">
+            <li><a href="/about.html">ABOUT</a></li>
+            <a href="#" onclick="openModal('contact'); return false;">Contact</a>
+            <a href="#" onclick="openModal('quote'); return false;">Get a Quote</a>
+            <a href="#">Careers</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="color:white; margin-bottom: 20px;">Contact</h4>
+          <p><i class="fas fa-map-marker-alt" style="color:var(--lp-gold);"></i> Kirichwa lane off Ngong road next to Green house mall.</p>
+          <p><i class="fas fa-phone"></i> +254 790 792629</p>
+          <p><i class="fas fa-phone-alt"></i> +254 727 085 461</p>
+          <p><i class="fas fa-envelope"></i> info@lpsecurity.co.ke</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Lakers Pride Security — Kenya's Elite Security Provider</span>
+        <span>PSRA Licensed & Compliant</span>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<!-- Modals -->
+<div id="overlay-about" class="page-overlay"><div class="modal-card"><div class="modal-header"><h2>About Lakers Pride Security</h2><button class="modal-close" onclick="closeModal('about')">✕</button></div><div class="modal-body"><p style="font-size:17px; margin-bottom:24px;">Founded in 2012, Lakers Pride Security has become a leading integrated security firm in East Africa. We provide elite manned guarding, advanced surveillance, and risk management.</p><h3 style="margin-top:20px;">Core Values</h3><ul style="margin-top:12px; list-style: none;"><li><i class="fas fa-check-circle" style="color:var(--lp-gold);"></i> Integrity & Transparency</li><li><i class="fas fa-check-circle" style="color:var(--lp-gold);"></i> Loyalty to Clients & Team</li><li><i class="fas fa-check-circle" style="color:var(--lp-gold);"></i> Innovation in Security Tech</li></ul></div></div></div>
+
+<div id="overlay-services" class="page-overlay"><div class="modal-card"><div class="modal-header"><h2>Our Security Services</h2><button class="modal-close" onclick="closeModal('services')">✕</button></div><div class="modal-body"><div style="display:grid; gap:20px;"><div><i class="fas fa-user-shield" style="color:var(--lp-gold); width:30px;"></i> <strong>Manned Guarding:</strong> Trained, uniformed guards.</div><div><i class="fas fa-camera"></i> <strong>CCTV/ALARM:</strong> Smart surveillance & 24/7 control room.</div><div><i class="fas fa-dog"></i> <strong>K9 Units:</strong> Patrol & detection dogs.</div><div><i class="fas fa-chart-simple"></i> <strong>VIP Protection & Consultancy:</strong> Executive security & risk analysis.</div><a href="#" class="btn-primary" style="margin-top:20px;" onclick="openModal('quote'); closeModal('services'); return false;">Request Quote →</a></div></div></div></div>
+
+<div id="overlay-contact" class="page-overlay"><div class="modal-card"><div class="modal-header"><h2>Contact Us</h2><button class="modal-close" onclick="closeModal('contact')">✕</button></div><div class="modal-body"><form id="contactFormModal"><div style="display:grid; gap:16px;"><input type="text" id="contactName" placeholder="Full Name" required><input type="email" id="contactEmail" placeholder="Email Address" required><input type="tel" id="contactPhone" placeholder="Phone"><textarea id="contactMessage" rows="3" placeholder="Your security inquiry..."></textarea><button type="submit" class="btn-primary" style="border:none; cursor:pointer;">Send Message</button></div></form><p style="margin-top:20px;"><i class="fas fa-phone-alt"></i> +254 790 792629  |  <i class="fab fa-whatsapp"></i> WhatsApp available 24/7</p></div></div></div></div>
+
+<div id="overlay-quote" class="page-overlay"><div class="modal-card"><div class="modal-header"><h2>Request a Quote</h2><button class="modal-close" onclick="closeModal('quote')">✕</button></div><div class="modal-body"><form id="quoteForm"><div style="display:grid; gap:16px;"><input type="text" id="quoteName" placeholder="Full Name" required><input type="email" id="quoteEmail" placeholder="Email" required><input type="text" id="quoteCompany" placeholder="Company Name"><select id="quoteService"><option>Manned Guarding</option><option>CCTV & Alarms</option><option>VIP Protection</option><option>K9 Services</option></select><textarea id="quoteDetails" rows="3" placeholder="Tell us about your security needs"></textarea><button type="submit" class="btn-primary">Get Custom Quote</button></div></form><div id="quoteSuccess" style="display:none; margin-top:16px; color:green;"></div></div></div></div></div>
+
+<div class="wa-float" onclick="window.open('https://wa.me/254 790 792629?text=Hello%20Lakers%20Pride%20Security%2C%20I%20need%20security%20assistance','_blank')"><i class="fab fa-whatsapp"></i></div>
+
+<script>
+  // Load all dynamic content
+  async function loadImages() {
+    try {
+      const response = await fetch('/api/images');
+      const images = await response.json();
+      
+      // Update hero background
+      if (images.heroBackground) {
+        document.getElementById('heroSection').style.backgroundImage = `linear-gradient(105deg, rgba(10, 28, 58, 0.92) 0%, rgba(15, 42, 79, 0.92) 100%), url('${images.heroBackground}')`;
+      }
+      
+      // Update logo
+      if (images.logo) {
+        const logos = document.querySelectorAll('#siteLogo, #footerLogo');
+        logos.forEach(logo => {
+          if (logo) logo.src = images.logo;
+        });
+      }
+      
+      // Update about image
+      if (images.aboutImage) {
+        const aboutImg = document.getElementById('aboutImage');
+        if (aboutImg) aboutImg.src = images.aboutImage;
+      }
+    } catch (error) {
+      console.error('Failed to load images:', error);
+    }
+  }
+  
+  // Load testimonials
+  async function loadTestimonials() {
+    try {
+      const response = await fetch('/api/testimonials');
+      const testimonials = await response.json();
+      
+      const grid = document.getElementById('testimonialsGrid');
+      if (!grid) return;
+      
+      if (testimonials.length === 0) {
+        grid.innerHTML = '<p style="text-align:center; grid-column:1/-1;">No testimonials yet. Check back soon!</p>';
+        return;
+      }
+      
+      grid.innerHTML = testimonials.map(t => `
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <div class="testimonial-stars">
+            ${'★'.repeat(t.rating)}${'☆'.repeat(5-t.rating)}
+          </div>
+          <p class="testimonial-text">"${escapeHtml(t.content)}"</p>
+          <div class="testimonial-author">
+            <h4>${escapeHtml(t.clientName)}</h4>
+            <p>${escapeHtml(t.company)}</p>
+          </div>
+        </div>
+      `).join('');
+    } catch (error) {
+      console.error('Failed to load testimonials:', error);
+    }
+  }
+  
+  // Helper function to escape HTML
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+  
+  // Toast notification
+  function showToast(message, isError = false) {
+    let toast = document.querySelector('.toast');
+    if(toast) toast.remove();
+    const div = document.createElement('div');
+    div.className = `toast ${isError ? 'error' : ''}`;
+    div.innerHTML = `<i class="fas ${isError ? 'fa-exclamation-triangle' : 'fa-check-circle'}"></i> ${message}`;
+    document.body.appendChild(div);
+    setTimeout(() => div.remove(), 4000);
+  }
+  
+  // Contact form handler
+  const contactForm = document.getElementById('contactFormModal');
+  if(contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fullName = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const phone = document.getElementById('contactPhone').value.trim();
+      const message = document.getElementById('contactMessage').value.trim();
+      
+      if(!fullName || !email || !message) {
+        showToast('Please fill all required fields (Name, Email, Message)', true);
+        return;
+      }
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fullName, email, phone, message })
+        });
+        const data = await res.json();
+        if(res.ok) {
+          showToast('✅ Message sent! We will contact you shortly.');
+          contactForm.reset();
+          closeModal('contact');
+        } else {
+          showToast(data.error || 'Failed to send message', true);
+        }
+      } catch(err) {
+        showToast('Network error. Please try again.', true);
+      }
+    });
+  }
+  
+  // Quote form handler
+  const quoteForm = document.getElementById('quoteForm');
+  if(quoteForm) {
+    quoteForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fullName = document.getElementById('quoteName').value.trim();
+      const email = document.getElementById('quoteEmail').value.trim();
+      const company = document.getElementById('quoteCompany').value.trim();
+      const serviceType = document.getElementById('quoteService').value;
+      const details = document.getElementById('quoteDetails').value.trim();
+      
+      if(!fullName || !email || !serviceType || !details) {
+        showToast('Please fill all required fields', true);
+        return;
+      }
+      try {
+        const res = await fetch('/api/quote', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fullName, email, company, serviceType, details })
+        });
+        const data = await res.json();
+        if(res.ok) {
+          showToast('✅ Quote request received! Our team will respond within 24h.');
+          quoteForm.reset();
+          closeModal('quote');
+        } else {
+          showToast(data.error || 'Failed to send quote request', true);
+        }
+      } catch(err) {
+        showToast('Network error. Please try again.', true);
+      }
+    });
+  }
+  
+  // Modal functions
+  function showHome() { window.scrollTo({top:0, behavior:'smooth'}); }
+  function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  function openModal(id) { 
+    document.getElementById(`overlay-${id}`).classList.add('open'); 
+    document.body.style.overflow = 'hidden'; 
+  }
+  function closeModal(id) { 
+    document.getElementById(`overlay-${id}`).classList.remove('open'); 
+    document.body.style.overflow = ''; 
+  }
+  
+  window.addEventListener('click', function(e) { 
+    if(e.target.classList && e.target.classList.contains('page-overlay')) { 
+      e.target.classList.remove('open'); 
+      document.body.style.overflow = ''; 
+    } 
+  });
+  
+  window.addEventListener('scroll', () => { 
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40); 
+  });
+  
+  // Initialize
+  loadImages();
+  loadTestimonials();
+</script>
+<!-- Load testimonials from backend -->
+<script>
+async function loadTestimonials() {
+  try {
+    const res = await fetch('/api/testimonials');
+    const testimonials = await res.json();
+    const container = document.getElementById('testimonialsGrid');
+    if (!container) return;
+    if (testimonials.length === 0) {
+      container.innerHTML = '<p style="text-align:center;">No testimonials yet. Check back soon!</p>';
+      return;
+    }
+    container.innerHTML = testimonials.map(t => `
+      <div class="testimonial-card">
+        <div class="quote-icon">"</div>
+        <div class="testimonial-stars">${'★'.repeat(t.rating)}${'☆'.repeat(5-t.rating)}</div>
+        <p class="testimonial-text">"${escapeHtml(t.content)}"</p>
+        <div class="testimonial-author">
+          <h4>${escapeHtml(t.clientName)}</h4>
+          <p>${escapeHtml(t.company)}</p>
+        </div>
+      </div>
+    `).join('');
+  } catch (err) {
+    console.error('Failed to load testimonials:', err);
+  }
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+async function loadImages() {
+  try {
+    const res = await fetch('/api/images');
+    const images = await res.json();
+    if (images.logo) {
+      const logoImg = document.getElementById('siteLogo');
+      if (logoImg) logoImg.src = images.logo;
+    }
+    if (images.hero) {
+      const heroSection = document.getElementById('heroSection');
+      if (heroSection) heroSection.style.backgroundImage = `url('${images.hero}')`;
+    }
+    if (images.about) {
+      const aboutImg = document.getElementById('aboutImage');
+      if (aboutImg) aboutImg.src = images.about;
+    }
+  } catch(e) { console.error('Image load failed', e); }
+}
+
+// Call after page loads
+document.addEventListener('DOMContentLoaded', loadImages);
+
+// Call when page loads
+document.addEventListener('DOMContentLoaded', loadTestimonials);
+
+// Load images from server
+async function loadSiteImages() {
+  try {
+    const res = await fetch('/api/images');
+    const images = await res.json();
+    if (images.logo) {
+      const logoImg = document.querySelector('.logo-img');
+      if (logoImg) logoImg.src = images.logo;
+    }
+    if (images.hero) {
+      const heroSection = document.querySelector('.hero');
+      if (heroSection) {
+        heroSection.style.backgroundImage = `linear-gradient(105deg, rgba(10, 28, 58, 0.92) 0%, rgba(15, 42, 79, 0.92) 100%), url('${images.hero}')`;
+      }
+    }
+    if (images.about) {
+      const aboutImg = document.getElementById('aboutImage');
+      if (aboutImg) aboutImg.src = images.about;
+    }
+  } catch (err) {
+    console.error('Failed to load images:', err);
+  }
+}
+
+// Call on page load
+document.addEventListener('DOMContentLoaded', loadSiteImages);
+</script>
+</body>
+</html>

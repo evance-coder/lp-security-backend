@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1780870810917,
+    "clientName": "Cram Savanwa",
+    "company": "Prideinn PARADISE",
+    "content": "Over the period we have worked with Lakers pride security, their team has consistently demonstrated professionalism, reliability and strong commitment to safety. Their officers are well trained disciplined and responsive, ensuring our guests and staff feel secure at all times.",
+    "rating": 5,
+    "isActive": true,
+    "createdAt": "2026-06-07T22:20:10.917Z"
+  },
+  {
+    "id": 1780871126669,
+    "clientName": "Onyinkwa obaigwa Samuel",
+    "company": "Hotel Sapphire",
+    "content": "LP security has shown competence in key security areas including access control, guest and staff safety, incident management, emergency response and coordination with Hotel management",
+    "rating": 5,
+    "isActive": true,
+    "createdAt": "2026-06-07T22:25:26.669Z"
+  },
+  {
+    "id": 1781030145355,
+    "clientName": "Joel mutwiri",
+    "company": "Sarova",
+    "content": "I highly recommend LP security",
+    "rating": 5,
+    "isActive": true,
+    "createdAt": "2026-06-09T18:35:45.355Z"
+  }
+]

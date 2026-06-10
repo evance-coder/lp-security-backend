@@ -1,0 +1,50 @@
+@'
+<!DOCTYPE html>
+<html>
+<head><title>LP Security Admin</title>
+<style>
+  body { font-family: Arial; display: flex; justify-content: center; align-items: center; height: 100vh; background: #0A1C3A; margin: 0; }
+  .box { background: white; padding: 30px; border-radius: 8px; width: 300px; text-align: center; }
+  input { width: 100%; padding: 8px; margin: 10px 0; box-sizing: border-box; }
+  button { width: 100%; padding: 10px; background: #D4AF37; border: none; cursor: pointer; font-weight: bold; }
+  .success { color: green; }
+  .error { color: red; }
+</style>
+</head>
+<body>
+<div class="box">
+  <h2>LP Security Admin</h2>
+  <input type="text" id="username" placeholder="Username" value="lpsecurity">
+  <input type="password" id="password" placeholder="Password" value="Admin123">
+  <button onclick="login()">Login</button>
+  <div id="msg"></div>
+</div>
+<script>
+async function login() {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  const msg = document.getElementById('msg');
+  msg.innerHTML = 'Logging in...';
+  try {
+    const res = await fetch('/api/admin/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    });
+    const data = await res.json();
+    if (res.ok) {
+      localStorage.setItem('adminToken', data.token);
+      window.location.href = '/admin-dashboard.html';
+    } else {
+      msg.innerHTML = '<span class="error">❌ ' + (data.error || 'Login failed') + '</span>';
+    }
+  } catch (err) {
+    msg.innerHTML = '<span class="error">❌ Error: ' + err.message + '</span>';
+  }
+}
+</script>
+</body>
+</html>
+'@ | Out-File -FilePath "public\admin-login.html" -Encoding ascii -Force
+
+

@@ -1,0 +1,11 @@
+{
+  "hero": "/images/hero/image.jpg",
+  "logo": "/images/logo/image.jpg",
+  "about": "/images/about/image.jpg",
+  "service_service1": "/images/services/service1/image.jpg",
+  "service_service2": "/images/services/service2/image.jpg",
+  "service_service5": "/images/services/service5/image.jpg",
+  "service_service4": "/images/services/service4/image.jpg",
+  "service_service6": "/images/services/service6/image.jpg",
+  "service_service3": "/images/services/service3/image.jpg"
+}

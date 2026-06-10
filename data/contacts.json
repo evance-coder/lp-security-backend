@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1780840186570,
+    "fullName": "Test User",
+    "email": "test@example.com",
+    "phone": "0712345678",
+    "message": "This is a test message",
+    "status": "read",
+    "createdAt": "2026-06-07T13:49:46.570Z"
+  },
+  {
+    "id": 1781030200292,
+    "fullName": "Mark Evance",
+    "email": "evancemark343@gmail.com",
+    "phone": "0741121346",
+    "message": "I need your security services.",
+    "status": "pending",
+    "createdAt": "2026-06-09T18:36:40.292Z"
+  }
+]

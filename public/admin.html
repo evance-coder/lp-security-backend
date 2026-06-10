@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LP Security - Admin Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #F0F2F5; }
+    .admin-container { display: flex; min-height: 100vh; }
+    .sidebar { width: 260px; background: #0A1C3A; color: white; padding: 30px 20px; }
+    .sidebar h2 { margin-bottom: 30px; font-size: 24px; color: #D4AF37; }
+    .sidebar nav a { display: block; padding: 12px 15px; color: #B9C4E0; text-decoration: none; margin-bottom: 8px; border-radius: 8px; transition: 0.2s; }
+    .sidebar nav a:hover, .sidebar nav a.active { background: rgba(212,175,55,0.2); color: #D4AF37; }
+    .main-content { flex: 1; padding: 30px; overflow-x: auto; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 30px; }
+    .stat-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .stat-card h3 { font-size: 14px; color: #666; margin-bottom: 10px; }
+    .stat-card .number { font-size: 32px; font-weight: 800; color: #0A1C3A; }
+    .data-table { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow-x: auto; }
+    .data-table table { width: 100%; border-collapse: collapse; }
+    .data-table th, .data-table td { padding: 12px; text-align: left; border-bottom: 1px solid #E6EAF2; }
+    .data-table th { font-weight: 700; color: #0A1C3A; }
+    .login-container { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: linear-gradient(135deg, #0A1C3A 0%, #1a3a6e 100%); }
+    .login-box { background: white; padding: 40px; border-radius: 16px; width: 350px; }
+    .login-box h2 { margin-bottom: 24px; color: #0A1C3A; }
+    .login-box input { width: 100%; padding: 12px; margin-bottom: 16px; border: 1px solid #ddd; border-radius: 8px; }
+    .login-box button { width: 100%; padding: 12px; background: #D4AF37; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
+    .status-badge { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .status-pending { background: #fff3cd; color: #856404; }
+    .status-read, .status-contacted { background: #d1ecf1; color: #0c5460; }
+    .status-replied, .status-converted { background: #d4edda; color: #155724; }
+    .btn-sm { padding: 4px 12px; border-radius: 6px; border: none; cursor: pointer; margin: 0 4px; }
+    .btn-danger { background: #dc3545; color: white; }
+    .btn-success { background: #28a745; color: white; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+  </style>
+</head>
+<body>
+<div id="loginSection" class="login-container">
+  <div class="login-box">
+    <h2><i class="fas fa-shield-alt"></i> LP Security Admin</h2>
+    <input type="text" id="username" placeholder="Username" autocomplete="off" value="lpsecurity">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p style="margin-top: 16px; font-size: 12px; color: #666;">Username: lpsecurity / Password: Admin123</p>
+  </div>
+</div>
+
+<div id="dashboardSection" style="display: none;">
+  <div class="admin-container">
+    <div class="sidebar">
+      <h2><i class="fas fa-shield-alt"></i> LP Security</h2>
+      <nav>
+        <a href="#" onclick="showTab('stats')" class="active" id="nav-stats"><i class="fas fa-chart-line"></i> Dashboard</a>
+        <a href="#" onclick="showTab('contacts')" id="nav-contacts"><i class="fas fa-envelope"></i> Contacts</a>
+        <a href="#" onclick="showTab('quotes')" id="nav-quotes"><i class="fas fa-file-invoice"></i> Quotes</a>
+        <a href="#" onclick="showTab('testimonials')" id="nav-testimonials"><i class="fas fa-star"></i> Testimonials</a>
+        <a href="#" onclick="showTab('images')" id="nav-images"><i class="fas fa-images"></i> Site Images</a>
+        <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </nav>
+    </div>
+    <div class="main-content">
+      <div id="statsTab" class="tab-content active">
+        <div class="stats-grid" id="statsGrid"></div>
+      </div>
+      <div id="contactsTab" class="tab-content">
+        <div class="data-table"><h3>Contact Messages</h3><table id="contactsTable"><thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Message</th><th>Status</th><th>Date</th><th>Action</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div id="quotesTab" class="tab-content">
+        <div class="data-table"><h3>Quote Requests</h3><table id="quotesTable"><thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Service</th><th>Details</th><th>Status</th><th>Date</th><th>Action</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div id="testimonialsTab" class="tab-content">
+        <div class="data-table">
+          <h3>Testimonials</h3>
+          <button class="btn-sm btn-success" onclick="showAddTestimonialModal()" style="margin-bottom: 16px;">+ Add Testimonial</button>
+          <table id="testimonialsTable"><thead><tr><th>ID</th><th>Client</th><th>Company</th><th>Content</th><th>Rating</th><th>Status</th><th>Actions</th></tr></thead><tbody></tbody></table>
+        </div>
+      </div>
+      <div id="imagesTab" class="tab-content">
+        <div class="data-table">
+          <h3>Manage Site Images</h3>
+          <div style="display: grid; gap: 30px; margin-top: 20px;">
+            <div>
+              <h4>Company Logo</h4>
+              <img id="previewLogo" style="max-width: 100px; margin: 10px 0; border-radius: 8px;">
+              <input type="file" id="logoUpload" accept="image/*">
+              <button onclick="uploadImage('logo')" class="btn-sm btn-success">Upload Logo</button>
+            </div>
+            <div>
+              <h4>Hero Background Image</h4>
+              <img id="previewHero" style="max-width: 200px; margin: 10px 0; border-radius: 8px;">
+              <input type="file" id="heroUpload" accept="image/*">
+              <button onclick="uploadImage('heroBackground')" class="btn-sm btn-success">Upload Hero Background</button>
+            </div>
+            <div>
+              <h4>About Section Image</h4>
+              <img id="previewAbout" style="max-width: 200px; margin: 10px 0; border-radius: 8px;">
+              <input type="file" id="aboutUpload" accept="image/*">
+              <button onclick="uploadImage('aboutImage')" class="btn-sm btn-success">Upload About Image</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="addTestimonialModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:1000;">
+  <div style="background:white; padding:30px; border-radius:16px; width:500px;">
+    <h3>Add Testimonial</h3>
+    <input type="text" id="testimonialName" placeholder="Client Name" style="width:100%; padding:10px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
+    <input type="text" id="testimonialCompany" placeholder="Company Name" style="width:100%; padding:10px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
+    <textarea id="testimonialContent" placeholder="Testimonial Content" rows="4" style="width:100%; padding:10px; margin:10px 0; border:1px solid #ddd; border-radius:8px;"></textarea>
+    <select id="testimonialRating" style="width:100%; padding:10px; margin:10px 0; border:1px solid #ddd; border-radius:8px;">
+      <option value="5">★★★★★ (5)</option>
+      <option value="4">★★★★☆ (4)</option>
+      <option value="3">★★★☆☆ (3)</option>
+    </select>
+    <button onclick="addTestimonial()" class="btn-sm btn-success">Save</button>
+    <button onclick="closeModal()" class="btn-sm" style="background:#6c757d; color:white;">Cancel</button>
+  </div>
+</div>
+
+<script>
+  let token = '';
+  const API_BASE = '/api/admin';
+  
+  async function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    
+    const response = await fetch(`${API_BASE}/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    });
+    
+    if (response.ok) {
+      const data = await response.json();
+      token = data.token;
+      localStorage.setItem('adminToken', token);
+      document.getElementById('loginSection').style.display = 'none';
+      document.getElementById('dashboardSection').style.display = 'block';
+      loadDashboard();
+      loadImages(); // Load images when dashboard loads
+    } else {
+      alert('Invalid credentials. Use username: lpsecurity and password: Admin123');
+    }
+  }
+  
+  async function fetchWithAuth(url, options = {}) {
+    const storedToken = localStorage.getItem('adminToken');
+    if (storedToken) token = storedToken;
+    
+    return fetch(url, {
+      ...options,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+        ...options.headers
+      }
+    });
+  }
+  
+  async function loadDashboard() {
+    await loadStats();
+    await loadContacts();
+    await loadQuotes();
+    await loadTestimonials();
+  }
+  
+  async function loadStats() {
+    const response = await fetchWithAuth(`${API_BASE}/stats`);
+    if (response.ok) {
+      const stats = await response.json();
+      const statsGrid = document.getElementById('statsGrid');
+      statsGrid.innerHTML = `
+        <div class="stat-card"><h3>Total Contacts</h3><div class="number">${stats.totalContacts}</div></div>
+        <div class="stat-card"><h3>Pending Contacts</h3><div class="number">${stats.pendingContacts}</div></div>
+        <div class="stat-card"><h3>Total Quotes</h3><div class="number">${stats.totalQuotes}</div></div>
+        <div class="stat-card"><h3>Pending Quotes</h3><div class="number">${stats.pendingQuotes}</div></div>
+        <div class="stat-card"><h3>Active Testimonials</h3><div class="number">${stats.activeTestimonials}</div></div>
+      `;
+    }
+  }
+  
+  async function loadContacts() {
+    const response = await fetchWithAuth(`${API_BASE}/contacts`);
+    if (response.ok) {
+      const contacts = await response.json();
+      const tbody = document.querySelector('#contactsTable tbody');
+      tbody.innerHTML = contacts.map(c => `
+        <tr>
+          <td>${c.id}</td><td>${escapeHtml(c.fullName)}</td><td>${escapeHtml(c.email)}</td><td>${escapeHtml(c.message.substring(0, 50))}...</td>
+          <td><span class="status-badge status-${c.status}">${c.status}</span></td>
+          <td>${new Date(c.createdAt).toLocaleDateString()}</td>
+          <td><select onchange="updateContactStatus(${c.id}, this.value)"><option ${c.status === 'pending' ? 'selected' : ''}>pending</option><option ${c.status === 'read' ? 'selected' : ''}>read</option><option ${c.status === 'replied' ? 'selected' : ''}>replied</option></select></td>
+        `
+      ).join('');
+    }
+  }
+  
+  async function loadQuotes() {
+    const response = await fetchWithAuth(`${API_BASE}/quotes`);
+    if (response.ok) {
+      const quotes = await response.json();
+      const tbody = document.querySelector('#quotesTable tbody');
+      tbody.innerHTML = quotes.map(q => `
+        <tr>
+          <td>${q.id}</td><td>${escapeHtml(q.fullName)}</td><td>${escapeHtml(q.email)}</td><td>${escapeHtml(q.serviceType)}</td><td>${escapeHtml(q.details.substring(0, 40))}...</td>
+          <td><span class="status-badge status-${q.status === 'pending' ? 'pending' : (q.status === 'contacted' ? 'read' : 'converted' ? 'success' : '')}">${q.status}</span></td>
+          <td>${new Date(q.createdAt).toLocaleDateString()}</td>
+          <td><select onchange="updateQuoteStatus(${q.id}, this.value)"><option ${q.status === 'pending' ? 'selected' : ''}>pending</option><option ${q.status === 'contacted' ? 'selected' : ''}>contacted</option><option ${q.status === 'converted' ? 'selected' : ''}>converted</option></select></td>
+         `
+      ).join('');
+    }
+  }
+  
+  async function loadTestimonials() {
+    const response = await fetchWithAuth(`${API_BASE}/testimonials`);
+    if (response.ok) {
+      const testimonials = await response.json();
+      const tbody = document.querySelector('#testimonialsTable tbody');
+      tbody.innerHTML = testimonials.map(t => `
+        <tr>
+          <td>${t.id}</td><td>${escapeHtml(t.clientName)}</td><td>${escapeHtml(t.company)}</td><td>${escapeHtml(t.content.substring(0, 50))}...</td>
+          <td>${'★'.repeat(t.rating)}</td>
+          <td><span class="status-badge">${t.isActive ? 'Active' : 'Inactive'}</span></td>
+          <td><button class="btn-sm ${t.isActive ? 'btn-danger' : 'btn-success'}" onclick="toggleTestimonial(${t.id}, ${!t.isActive})">${t.isActive ? 'Hide' : 'Show'}</button>
+          <button class="btn-sm btn-danger" onclick="deleteTestimonial(${t.id})">Delete</button></td>
+         `
+      ).join('');
+    }
+  }
+  
+  async function updateContactStatus(id, status) {
+    await fetchWithAuth(`${API_BASE}/contacts/${id}`, { method: 'PUT', body: JSON.stringify({ status }) });
+    loadContacts();
+  }
+  
+  async function updateQuoteStatus(id, status) {
+    await fetchWithAuth(`${API_BASE}/quotes/${id}`, { method: 'PUT', body: JSON.stringify({ status }) });
+    loadQuotes();
+  }
+  
+  async function toggleTestimonial(id, isActive) {
+    await fetchWithAuth(`${API_BASE}/testimonials/${id}`, { method: 'PUT', body: JSON.stringify({ isActive }) });
+    loadTestimonials();
+  }
+  
+  async function deleteTestimonial(id) {
+    if (confirm('Delete this testimonial?')) {
+      await fetchWithAuth(`${API_BASE}/testimonials/${id}`, { method: 'DELETE' });
+      loadTestimonials();
+    }
+  }
+  
+  async function addTestimonial() {
+    const clientName = document.getElementById('testimonialName').value;
+    const company = document.getElementById('testimonialCompany').value;
+    const content = document.getElementById('testimonialContent').value;
+    const rating = parseInt(document.getElementById('testimonialRating').value);
+    
+    if (!clientName || !company || !content) {
+      alert('Please fill all fields');
+      return;
+    }
+    
+    const response = await fetchWithAuth(`${API_BASE}/testimonials`, {
+      method: 'POST',
+      body: JSON.stringify({ clientName, company, content, rating })
+    });
+    
+    if (response.ok) {
+      closeModal();
+      loadTestimonials();
+      alert('Testimonial added successfully!');
+      // Clear form
+      document.getElementById('testimonialName').value = '';
+      document.getElementById('testimonialCompany').value = '';
+      document.getElementById('testimonialContent').value = '';
+      document.getElementById('testimonialRating').value = '5';
+    } else {
+      alert('Failed to add testimonial');
+    }
+  }
+  
+  // Image upload functions
+  async function uploadImage(imageType) {
+    let fileInput;
+    if (imageType === 'logo') fileInput = document.getElementById('logoUpload');
+    else if (imageType === 'heroBackground') fileInput = document.getElementById('heroUpload');
+    else fileInput = document.getElementById('aboutUpload');
+    
+    const file = fileInput.files[0];
+    if (!file) {
+      alert('Please select a file first');
+      return;
+    }
+    
+    const formData = new FormData();
+    formData.append('image', file);
+    formData.append('imageType', imageType);
+    
+    try {
+      const response = await fetch('/api/images/upload', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
+        body: formData
+      });
+      
+      if (response.ok) {
+        alert('Image uploaded successfully!');
+        loadImages(); // Refresh previews
+      } else {
+        alert('Failed to upload image');
+      }
+    } catch (error) {
+      console.error('Upload error:', error);
+      alert('Error uploading image');
+    }
+  }
+  
+  async function loadImages() {
+    try {
+      const response = await fetch('/api/images');
+      const images = await response.json();
+      
+      if (images.logo) {
+        document.getElementById('previewLogo').src = images.logo;
+      }
+      if (images.heroBackground) {
+        document.getElementById('previewHero').src = images.heroBackground;
+      }
+      if (images.aboutImage) {
+        document.getElementById('previewAbout').src = images.aboutImage;
+      }
+    } catch (error) {
+      console.error('Failed to load images:', error);
+    }
+  }
+  
+  function showAddTestimonialModal() {
+    document.getElementById('addTestimonialModal').style.display = 'flex';
+  }
+  
+  function closeModal() {
+    document.getElementById('addTestimonialModal').style.display = 'none';
+  }
+  
+  function showTab(tab) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.getElementById(`${tab}Tab`).classList.add('active');
+    document.querySelectorAll('.sidebar nav a').forEach(a => a.classList.remove('active'));
+    document.getElementById(`nav-${tab}`).classList.add('active');
+    
+    // Load images when images tab is shown
+    if (tab === 'images') {
+      loadImages();
+    }
+  }
+  
+  function logout() {
+    localStorage.removeItem('adminToken');
+    token = '';
+    document.getElementById('loginSection').style.display = 'flex';
+    document.getElementById('dashboardSection').style.display = 'none';
+  }
+  
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+  
+  // Check for existing token on page load
+  const savedToken = localStorage.getItem('adminToken');
+  if (savedToken) {
+    token = savedToken;
+    document.getElementById('loginSection').style.display = 'none';
+    document.getElementById('dashboardSection').style.display = 'block';
+    loadDashboard();
+    loadImages();
+  }
+</script>
+</body>
+</html>

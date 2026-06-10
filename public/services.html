@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LP Security | Our Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #0A1C3A; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 28px; }
+    .navbar { background: #0A1C3A; padding: 0; box-shadow: 0 8px 20px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 1000; }
+    .navbar .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; padding: 14px 0; }
+    .logo-img { width: 48px; height: 48px; object-fit: contain; border-radius: 8px; }
+    .logo-text h1 { font-size: 22px; font-weight: 800; color: white; }
+    .logo-text span { font-size: 10px; letter-spacing: 1.2px; color: #D4AF37; font-weight: 600; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 6px; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.85); padding: 8px 16px; border-radius: 40px; transition: 0.2s; }
+    .nav-links a:hover, .nav-links a.active { background: rgba(212,175,55,0.12); color: #D4AF37; }
+    .quote-btn { background: #D4AF37; color: #0A1C3A !important; padding: 8px 20px !important; border-radius: 40px !important; font-weight: 800 !important; }
+    .services-hero { background: #0A1C3A; color: white; padding: 60px 0; text-align: center; }
+    .services-hero h1 { font-size: 48px; margin-bottom: 20px; }
+    .services-hero h1 span { color: #D4AF37; }
+    .services-hero p { font-size: 18px; color: #B9C4E0; max-width: 600px; margin: 0 auto; }
+    .services-grid { padding: 80px 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
+    .service-detail-card { background: white; border-radius: 20px; padding: 40px 30px; box-shadow: 0 12px 28px rgba(0,0,0,0.05); transition: 0.25s; border: 1px solid #E6EAF2; }
+    .service-detail-card:hover { transform: translateY(-6px); border-color: #D4AF37; }
+    .service-img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; display: none; background: #f0f0f0; }
+    .service-detail-card h2 { font-size: 24px; font-weight: 800; margin-bottom: 16px; color: #0A1C3A; }
+    .service-detail-card p { color: #5A6885; line-height: 1.6; margin-bottom: 20px; }
+    .service-detail-card ul { list-style: none; margin-top: 20px; }
+    .service-detail-card ul li { padding: 8px 0; border-bottom: 1px solid #E6EAF2; display: flex; align-items: center; gap: 10px; }
+    .service-detail-card ul li i { color: #D4AF37; width: 20px; }
+    .cta-section { background: #F8FAFE; padding: 60px 0; text-align: center; }
+    .cta-button { background: #D4AF37; color: #0A1C3A; padding: 14px 32px; border-radius: 40px; text-decoration: none; font-weight: 800; display: inline-block; margin-top: 20px; }
+    footer { background: #07122A; color: #B9C4E0; padding: 40px 0 20px; margin-top: 60px; }
+    .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); }
+    @media (max-width: 768px) { .nav-links { display: none; } .services-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="container">
+    <a href="/" class="logo">
+      <img src="/images/logo/image.jpg" alt="Lakers Pride Security Logo" class="logo-img" id="siteLogo" onerror="this.src='https://placehold.co/48x48/0A1C3A/D4AF37?text=LP'">
+      <div class="logo-text"><h1>Lakers Pride SECURITY</h1><span>Integrity & Loyalty</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">HOME</a></li>
+      <li><a href="/about.html">ABOUT</a></li>
+      <li><a href="/services.html" class="active">SERVICES</a></li>
+      <li><a href="/">CONTACT</a></li>
+      <li><a href="/" class="quote-btn">REQUEST QUOTE</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="services-hero">
+  <div class="container">
+    <h1>Our <span>Security Services</span></h1>
+    <p>Comprehensive protection solutions tailored to your unique needs</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="services-grid">
+    <!-- Service 1: Manned Guarding   -->
+    <div class="service-detail-card">
+      <img id="serviceImg1" class="service-img" src="" alt="Manned Guarding">
+      <h2>Manned Guarding</h2>
+      <p>Professional, well-trained security guards to protect your people and property with integrity. Our guards undergo rigorous background checks and continuous training.</p>
+      <ul>
+        <li><i class="fas fa-check"></i> 24/7 on-site presence</li>
+        <li><i class="fas fa-check"></i> PSRA licensed officers</li>
+        <li><i class="fas fa-check"></i> Regular patrols and access control</li>
+      </ul>
+    </div>
+    <!-- Service 2: CCTV & Surveillance -->
+    <div class="service-detail-card">
+      <img id="serviceImg2" class="service-img" src="" alt="CCTV & Surveillance">
+      <h2>CCTV & Surveillance</h2>
+      <p>Advanced CCTV systems with 24/7 monitoring and real-time alerts. Customized solutions for any environment – from small businesses to large complexes.</p>
+      <ul>
+        <li><i class="fas fa-check"></i> High-definition cameras</li>
+        <li><i class="fas fa-check"></i> Remote access and cloud storage</li>
+        <li><i class="fas fa-check"></i> AI-powered motion detection</li>
+      </ul>
+    </div>
+    <!-- Service 3: Alarm & Intrusion Detection  -->
+    <div class="service-detail-card">
+      <img id="serviceImg3" class="service-img" src="" alt="Alarm & Intrusion Detection">
+      <h2>Alarm & Intrusion Detection</h2>
+      <p>Smart alarm systems with instant alerts and response integration. Protect your premises from unauthorized access and emergencies.</p>
+      <ul>
+        <li><i class="fas fa-check"></i> Burglar and fire alarms</li>
+        <li><i class="fas fa-check"></i> 24/7 central monitoring</li>
+        <li><i class="fas fa-check"></i> Mobile app notifications</li>
+      </ul>
+    </div>
+    <!-- Service 4: VIP Protection  -->
+    <div class="service-detail-card">
+      <img id="serviceImg4" class="service-img" src="" alt="VIP Protection">
+      <h2>VIP Protection</h2>
+      <p>Close protection services for individuals, executives, and dignitaries. Discreet, elite, and highly trained bodyguards for personal security.</p>
+      <ul>
+        <li><i class="fas fa-check"></i> Executive protection</li>
+        <li><i class="fas fa-check"></i> Secure transportation</li>
+        <li><i class="fas fa-check"></i> Risk assessment and planning</li>
+      </ul>
+    </div>
+    <!-- Service 5: K9 Security Services  -->
+    <div class="service-detail-card">
+      <img id="serviceImg5" class="service-img" src="" alt="K9 Security Services">
+      <h2>K9 Security Services</h2>
+      <p>Trained security dogs for detection, patrol, and risk mitigation on sensitive sites. Ideal for warehouses, airports, and large perimeters.</p>
+      <ul>
+        <li><i class="fas fa-check"></i> Explosives and narcotics detection</li>
+        <li><i class="fas fa-check"></i> Patrol and tracking dogs</li>
+        <li><i class="fas fa-check"></i> Handler teams available 24/7</li>
+      </ul>
+    </div>
+    <!-- Service 6: Security Consultancy -->
+    <div class="service-detail-card">
+      <img id="serviceImg6" class="service-img" src="" alt="Security Consultancy">
+      <h2>Security Consultancy</h2>
+      <p>Professional risk assessment, security audits, and modern security planning for enterprises. We help you identify vulnerabilities and design effective solutions.</p>
+      <ul>
+        <li><i class="fas fa-check"></i> Site vulnerability assessment</li>
+        <li><i class="fas fa-check"></i> Security policy development</li>
+        <li><i class="fas fa-check"></i> Crisis management planning</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Need a Custom Security Plan?</h2>
+    <p>Contact us today for a free consultation and quote tailored to your specific needs.</p>
+    <a href="/" class="cta-button">Request a Quote</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 Lakers Pride Security — Kenya's Elite Security Provider</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Load logo
+  fetch('/api/images').then(res => res.json()).then(images => {
+    if (images.logo) document.getElementById('siteLogo').src = images.logo;
+  }).catch(e => console.log);
+
+  // Load service images
+  async function loadServiceImages() {
+    try {
+      const res = await fetch('/api/images');
+      const images = await res.json();
+      for (let i = 1; i <= 6; i++) {
+        const imgElement = document.getElementById(`serviceImg${i}`);
+        const imageKey = `service_service${i}`;
+        if (imgElement && images[imageKey]) {
+          imgElement.src = images[imageKey] + '?t=' + Date.now();
+          imgElement.style.display = 'block';
+        } else if (imgElement) {
+          imgElement.style.display = 'none';
+        }
+      }
+    } catch(e) { console.error('Error loading service images:', e); }
+  }
+  loadServiceImages();
+</script>
+</body>
+</html>

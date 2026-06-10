@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LP Security | About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #0A1C3A; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 28px; }
+    .navbar { background: #0A1C3A; padding: 0; box-shadow: 0 8px 20px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 1000; }
+    .navbar .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; padding: 14px 0; }
+    .logo-img { width: 48px; height: 48px; object-fit: contain; border-radius: 8px; }
+    .logo-text h1 { font-size: 22px; font-weight: 800; color: white; }
+    .logo-text span { font-size: 10px; letter-spacing: 1.2px; color: #D4AF37; font-weight: 600; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 6px; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.85); padding: 8px 16px; border-radius: 40px; transition: 0.2s; }
+    .nav-links a:hover, .nav-links a.active { background: rgba(212,175,55,0.12); color: #D4AF37; }
+    .quote-btn { background: #D4AF37; color: #0A1C3A !important; padding: 8px 20px !important; border-radius: 40px !important; font-weight: 800 !important; }
+    .about-section { padding: 80px 0; }
+    .about-section h1 { font-size: 48px; font-weight: 800; color: #0A1C3A; margin-bottom: 20px; }
+    .about-section h1 span { color: #D4AF37; }
+    .about-content { display: flex; gap: 50px; flex-wrap: wrap; margin-top: 30px; }
+    .about-text { flex: 1.5; }
+    .about-text p { font-size: 17px; line-height: 1.6; color: #5A6885; margin-bottom: 20px; }
+    .mission-vision { display: flex; gap: 30px; margin: 50px 0; flex-wrap: wrap; }
+    .mission, .vision { flex: 1; background: #F8FAFE; padding: 30px; border-radius: 20px; text-align: center; transition: transform 0.3s; }
+    .mission:hover, .vision:hover { transform: translateY(-5px); }
+    .mission i, .vision i { font-size: 48px; color: #D4AF37; margin-bottom: 20px; }
+    .mission h3, .vision h3 { font-size: 28px; font-weight: 800; color: #0A1C3A; margin-bottom: 15px; }
+    .mission p, .vision p { font-size: 16px; color: #5A6885; line-height: 1.5; }
+    .about-stats { flex: 1; background: #F8FAFE; padding: 30px; border-radius: 20px; }
+    .stat { margin-bottom: 25px; }
+    .stat h3 { font-size: 36px; font-weight: 800; color: #D4AF37; }
+    .stat p { color: #0A1C3A; font-weight: 600; }
+    .values-list { list-style: none; margin-top: 30px; }
+    .values-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+    .values-list i { color: #D4AF37; font-size: 20px; width: 30px; }
+    footer { background: #07122A; color: #B9C4E0; padding: 40px 0 20px; margin-top: 60px; }
+    .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); }
+    @media (max-width: 768px) { .about-content { flex-direction: column; } .nav-links { display: none; } .mission-vision { flex-direction: column; } }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="container">
+    <a href="/" class="logo">
+      <img src="/images/logo/image.jpg" alt="LP Security Logo" class="logo-img" id="siteLogo" onerror="this.src='https://placehold.co/48x48/0A1C3A/D4AF37?text=LP'">
+      <div class="logo-text"><h1>Lakers Pride SECURITY</h1><span>Integrity & Loyalty</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">HOME</a></li>
+      <li><a href="/about.html" class="active">ABOUT</a></li>
+      <li><a href="/">SERVICES</a></li>
+      <li><a href="/">CONTACT</a></li>
+      <li><a href="/" class="quote-btn">REQUEST QUOTE</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="about-section">
+  <div class="container">
+    <h1>About <span>LP Security</span></h1>
+    
+    <div class="mission-vision">
+      <div class="mission">
+        <i class="fas fa-bullseye"></i>
+        <h3>Our Mission</h3>
+        <p>To provide innovative, reliable, and professional security solutions that protect our clients' assets, people, and reputation. We are committed to excellence through continuous training, technology integration, and unwavering integrity.</p>
+      </div>
+      <div class="vision">
+        <i class="fas fa-eye"></i>
+        <h3>Our Vision</h3>
+        <p>To be East Africa's most trusted security partner, setting the standard for excellence in integrated security services while fostering a culture of loyalty, professionalism, and community safety.</p>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <div class="about-text">
+        <p>Founded in 2012, under the DAMEVA Entreprises Ltd, Lakers Pride Security is one of the fastest growing security companies in Kenya.
+        <p>  Over the last decade,it has expanded geographically from its base in Nyanza and western Kenya to cover 15+ counties across the country, We have built a reputation for integrity, reliability, and excellence in security services.</p>
+        <p>Our approach combines highly trained personnel, modern technology, and a deep commitment to integrity. We don't just protect assets ? we build long-term partnerships based on trust and reliability.</p>
+        <p>With over 150 certified officers, 24/7 monitoring centers, and a rapid response team, we ensure your safety is never compromised. Our clients include hotels, Large Agricultural and industrialsectors, corporate offices, residential estates, and critical infrastructure.</p>
+        <ul class="values-list">
+          <li><i class="fas fa-check-circle"></i> Integrity & Transparency</li>
+          <li><i class="fas fa-check-circle"></i> Loyalty to Clients & Team</li>
+          <li><i class="fas fa-check-circle"></i> Innovation in Security Tech</li>
+        </ul>
+      </div>
+      <div class="about-stats">
+        <div class="stat"><h3>10+</h3><p>Years Experience</p></div>
+        <div class="stat"><h3>100+</h3><p>Happy Clients</p></div>
+        <div class="stat"><h3>15+</h3><p>Counties Covered</p></div>
+        <div class="stat"><h3>150+</h3><p>Trained Officers</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <span>? 2025 Lakers Pride Security ? Kenya's Elite Security Provider</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  fetch('/api/images').then(res => res.json()).then(images => {
+    if (images.logo) document.getElementById('siteLogo').src = images.logo;
+  }).catch(e => console.log);
+</script>
+</body>
+</html>
