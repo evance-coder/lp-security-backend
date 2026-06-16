@@ -1,3 +1,7 @@
+require('dotenv').config();
+console.log('ADMIN_USERNAME:', process.env.ADMIN_USERNAME);
+console.log('ADMIN_PASSWORD:', process.env.ADMIN_PASSWORD);
+
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
@@ -7,7 +11,7 @@ const multer = require('multer');
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // File paths for data
 const dataPath = path.join(__dirname, 'data');
@@ -32,8 +36,11 @@ function writeJSON(filePath, data) {
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
 }
 
-// Hardcoded admin
-const ADMIN_USER = { username: 'lpsecurity', password: 'Admin123' };
+// admin user
+const ADMIN_USER = {
+  username: process.env.ADMIN_USERNAME,
+  password: process.env.ADMIN_PASSWORD
+};
 
 // Authentication middleware
 function authenticate(req, res, next) {
@@ -41,6 +48,11 @@ function authenticate(req, res, next) {
   if (token === 'dummy-token') return next();
   res.status(401).json({ error: 'Unauthorized' });
 }
+
+//serve index.html for root
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Admin login
 app.post('/api/admin/login', (req, res) => {
