@@ -62,6 +62,7 @@
             display: flex;
             gap: 24px;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .top-contact a {
@@ -90,6 +91,7 @@
             letter-spacing: 1px;
             color: var(--lp-gold);
             border: 1px solid rgba(212, 175, 55, 0.3);
+            white-space: nowrap;
         }
 
         .social-icons a {
@@ -762,8 +764,9 @@
         <div class="container">
             <div class="top-contact">
                 <span class="emergency-badge"><i class="fas fa-shield-alt"></i> 24/7 Emergency Response</span>
-                <a href="tel:+254 790 792629"><i class="fas fa-phone-alt"></i>+254 745 355912</a>
-                <a href="tel:+254712345678"><i class="fas fa-phone-alt"></i> +254 727 085 461</a>
+                <a href="tel:+254790792629"><i class="fas fa-phone-alt"></i> +254 790 792 629 (Nairobi)</a>
+                <a href="tel:+254723243099"><i class="fas fa-phone-alt"></i> +254 723 243 099 (Nyanza/Western)</a>
+                <a href="tel:+254731278154"><i class="fas fa-phone-alt"></i> +254 731 278 154 (Mombasa)</a>
                 <a href="mailto:info@lpsecurity.co.ke"><i class="far fa-envelope"></i> info@lpsecurity.co.ke</a>
             </div>
             <div class="social-icons">
@@ -947,11 +950,11 @@
 
     <div id="overlay-services" class="page-overlay"><div class="modal-card"><div class="modal-header"><h2>Our Security Services</h2><button class="modal-close" onclick="closeModal('services')">✕</button></div><div class="modal-body"><div style="display:grid; gap:20px;"><div><i class="fas fa-user-shield" style="color:var(--lp-gold); width:30px;"></i> <strong>Manned Guarding:</strong> Trained, uniformed guards.</div><div><i class="fas fa-camera"></i> <strong>CCTV/ALARM:</strong> Smart surveillance & 24/7 control room.</div><div><i class="fas fa-dog"></i> <strong>K9 Units:</strong> Patrol & detection dogs.</div><div><i class="fas fa-chart-simple"></i> <strong>VIP Protection & Consultancy:</strong> Executive security & risk analysis.</div><div><i class="fas fa-calendar-check"></i> <strong>Event Security Coverage:</strong> Crowd management & event safety.</div><a href="#" class="btn-primary" style="margin-top:20px;" onclick="openModal('quote'); closeModal('services'); return false;">Request Quote →</a></div></div></div></div>
 
-    <div id="overlay-contact" class="page-overlay"><div class="modal-card"><div class="modal-header"><h2>Contact Us</h2><button class="modal-close" onclick="closeModal('contact')">✕</button></div><div class="modal-body"><form id="contactFormModal"><div style="display:grid; gap:16px;"><input type="text" id="contactName" placeholder="Full Name" required><input type="email" id="contactEmail" placeholder="Email Address" required><input type="tel" id="contactPhone" placeholder="Phone"><textarea id="contactMessage" rows="3" placeholder="Your security inquiry..."></textarea><button type="submit" class="btn-primary" style="border:none; cursor:pointer;">Send Message</button></div></form><p style="margin-top:20px;"><i class="fas fa-phone-alt"></i> +254 790 792629  |  <i class="fab fa-whatsapp"></i> WhatsApp available 24/7</p></div></div></div>
+    <div id="overlay-contact" class="page-overlay"><div class="modal-card"><div class="modal-header"><h2>Contact Us</h2><button class="modal-close" onclick="closeModal('contact')">✕</button></div><div class="modal-body"><form id="contactFormModal"><div style="display:grid; gap:16px;"><input type="text" id="contactName" placeholder="Full Name" required><input type="email" id="contactEmail" placeholder="Email Address" required><input type="tel" id="contactPhone" placeholder="Phone"><textarea id="contactMessage" rows="3" placeholder="Your security inquiry..."></textarea><button type="submit" class="btn-primary" style="border:none; cursor:pointer;">Send Message</button></div></form><p style="margin-top:20px;"><i class="fas fa-phone-alt"></i> +254 790 792 629  |  <i class="fab fa-whatsapp"></i> WhatsApp available 24/7</p></div></div></div>
 
     <div id="overlay-quote" class="page-overlay"><div class="modal-card"><div class="modal-header"><h2>Request a Quote</h2><button class="modal-close" onclick="closeModal('quote')">✕</button></div><div class="modal-body"><form id="quoteForm"><div style="display:grid; gap:16px;"><input type="text" id="quoteName" placeholder="Full Name" required><input type="email" id="quoteEmail" placeholder="Email" required><input type="text" id="quoteCompany" placeholder="Company Name"><select id="quoteService"><option>Manned Guarding</option><option>CCTV & Alarms</option><option>VIP Protection</option><option>K9 Services</option></select><textarea id="quoteDetails" rows="3" placeholder="Tell us about your security needs"></textarea><button type="submit" class="btn-primary">Get Custom Quote</button></div></form><div id="quoteSuccess" style="display:none; margin-top:16px; color:green;"></div></div></div></div>
 
-    <div class="wa-float" onclick="window.open('https://wa.me/254745355912?text=Hello%20Lakers%20Pride%20Security%2C%20I%20need%20security%20assistance','_blank')"><i class="fab fa-whatsapp"></i></div>
+    <div class="wa-float" onclick="window.open('https://wa.me/254790792629?text=Hello%20Lakers%20Pride%20Security%2C%20I%20need%20security%20assistance','_blank')"><i class="fab fa-whatsapp"></i></div>
 
     <script>
         // Load all dynamic content
